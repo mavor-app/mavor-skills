@@ -1,0 +1,15 @@
+{
+  "name": "mavor-skills",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Mavor skill catalog \u2014 static bundles and GitHub Pages index",
+  "scripts": {
+    "validate": "node scripts/validate-catalog.mjs",
+    "build": "node scripts/build-index.mjs"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "zod": "^3.24.2"
+  }
+}

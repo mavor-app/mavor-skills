@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MavorSkillCatalogIndex",
+  "type": "object",
+  "required": [
+    "catalogId",
+    "schemaVersion",
+    "version",
+    "baseUrl",
+    "skillCount",
+    "skills"
+  ],
+  "properties": {
+    "catalogId": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "version": {
+      "type": "string"
+    },
+    "baseUrl": {
+      "type": "string"
+    },
+    "skillCount": {
+      "type": "integer"
+    },
+    "skills": {
+      "type": "array"
+    }
+  }
+}
