@@ -43,12 +43,12 @@ Categorizes all inventory into aging buckets based on how long items have been s
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain |
 | buckets | string | no | 0-30,31-60,61-90,91-180,181+ | Comma-separated aging buckets in days |
 | carrying_cost_pct | float | no | 25 | Annual carrying cost as % of inventory value (industry avg 20-30%) |
 | vendor_filter | string | no | — | Scope to specific vendor |

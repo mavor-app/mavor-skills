@@ -43,12 +43,12 @@ Predicts which customers are at risk of churning by analyzing their purchase pat
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain |
 | days_back | integer | no | 365 | Historical window for purchase pattern analysis |
 | min_orders | integer | no | 2 | Minimum orders to calculate purchase interval (need 2+ for frequency) |
 | risk_threshold | float | no | 1.5 | Multiplier of avg purchase interval before flagging as at-risk |

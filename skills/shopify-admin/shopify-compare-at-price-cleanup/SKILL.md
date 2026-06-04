@@ -61,12 +61,12 @@ Identifies variants with a `compareAtPrice` that no longer represents a genuine 
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain (e.g., mystore.myshopify.com) |
 | dry_run | bool | no | true | Preview the cleanup without executing mutations |
 | clean_no_discount | bool | no | true | Clear `compareAtPrice` when `price >= compareAtPrice` |
 | clean_stale | bool | no | true | Clear `compareAtPrice` set longer than `max_age_days` |

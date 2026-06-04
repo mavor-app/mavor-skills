@@ -39,12 +39,12 @@ Groups customers by the month of their first purchase and tracks how each cohort
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain (e.g., mystore.myshopify.com) |
 | cohort_months | integer | no | 6 | Number of months of cohorts to analyze |
 | follow_months | integer | no | 3 | Number of months to follow each cohort after acquisition |
 | format | string | no | human | Output format: `human` or `json` |

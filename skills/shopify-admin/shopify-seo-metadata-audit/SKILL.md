@@ -43,12 +43,12 @@ Scans all active products, collections, and pages and flags records with missing
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain (e.g., mystore.myshopify.com) |
 | min_title_length | integer | no | 10 | Flag SEO titles shorter than this (characters) |
 | min_description_length | integer | no | 50 | Flag meta descriptions shorter than this (characters) |
 | scope | string | no | all | What to scan: `products`, `collections`, `pages`, or `all` |

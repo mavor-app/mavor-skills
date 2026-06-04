@@ -39,12 +39,12 @@ Calculates the total inventory value (on-hand quantity × unit cost) broken down
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain (e.g., mystore.myshopify.com) |
 | breakdown | string | no | both | Breakdown level: `location`, `vendor`, or `both` |
 | include_zero_cost | bool | no | true | Include items with no cost set (shown as $0) |
 | format | string | no | human | Output format: `human` or `json` |

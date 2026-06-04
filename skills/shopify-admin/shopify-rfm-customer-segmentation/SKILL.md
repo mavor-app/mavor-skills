@@ -49,12 +49,12 @@ Performs full RFM (Recency, Frequency, Monetary) analysis across the entire cust
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain (e.g., mystore.myshopify.com) |
 | days_back | integer | no | 365 | Lookback window for order history |
 | segments | integer | no | 5 | Number of quintile buckets per dimension (3 or 5) |
 | min_orders | integer | no | 1 | Minimum orders for a customer to be scored |

@@ -55,12 +55,12 @@ Pulls gift messages, gift-recipient names, and "is_gift" flags from order custom
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain (e.g., mystore.myshopify.com) |
 | days_back | integer | no | 7 | Lookback window of orders to scan |
 | status | string | no | unfulfilled | Order status filter: `unfulfilled`, `partial`, `any` |
 | message_keys | array | no | `["gift_message","gift_note","Gift Message","Gift Note","message","note_to_recipient"]` | Custom attribute keys (any case) that may contain a gift message |

@@ -43,12 +43,12 @@ Inventories every file (image, video, generic file) in the store's CDN library a
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain (e.g., mystore.myshopify.com) |
 | min_age_days | integer | no | 30 | Only flag files older than this (avoid newly uploaded assets in flight) |
 | file_types | string | no | all | Filter: `IMAGE`, `VIDEO`, `GENERIC_FILE`, or `all` |
 | sample_orphans | integer | no | 25 | Number of orphaned files to print in the human-format completion banner |

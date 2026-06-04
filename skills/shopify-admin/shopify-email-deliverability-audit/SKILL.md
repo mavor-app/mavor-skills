@@ -45,12 +45,12 @@ Scans the entire customer list and flags addresses that will hurt email delivera
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain (e.g., mystore.myshopify.com) |
 | marketing_consent_only | bool | no | true | Only scan customers who currently accept marketing — those are the ones at risk of being mailed |
 | disposable_domains | array | no | built-in list | Override built-in disposable-domain list |
 | role_localparts | array | no | `["info","admin","sales","support","contact","noreply","help","webmaster","postmaster"]` | Local-part prefixes to flag as role accounts |

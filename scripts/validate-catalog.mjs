@@ -10,6 +10,8 @@ const FORBIDDEN_BODY = [
   /shopify auth login/i,
   /shopify store auth/i,
   /\bvia cron\b/i,
+  /^\| store \| string \| yes \|/m,
+  /Universal \(store, format, dry_run\)/,
 ];
 
 const ALLOWED_TAG_PREFIXES = new Set(['shopify']);

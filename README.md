@@ -38,6 +38,20 @@ Shared helpers live in `scripts/lib/` (`bundle-scan`, `skill-schema`, `paths`) â
 
 Edit skills in `skills/shopify-admin/`; do not hand-edit `dist/index.json`.
 
+## Mavor playbook contract (llm skills)
+
+Commerce Agent resolves the Shopify store from the **workspace `connectionId`** (injected into tool calls). Playbooks must not ask users for store domain or API credentials.
+
+| Do | Don't |
+|----|--------|
+| List user inputs in YAML `input` (frontmatter) | Add `store` to `input` or parameter tables |
+| Document inputs under `## Parameters` (no `store` row) | Use `skill_run` in workflow (playbooks are `runtime.type: llm`) |
+| Execute via `shopify_graphql_query` (`query`, optional `variables`) | Require `mystore.myshopify.com` in chat |
+
+**Prerequisites** (every Shopify playbook body) should state: connectionId is injected; do not ask for store domain; use `shopify_graphql_query`.
+
+Run `node scripts/migrate-mavor-connection.mjs` after bulk edits to apply the standard body fixes.
+
 ## License
 
 MIT

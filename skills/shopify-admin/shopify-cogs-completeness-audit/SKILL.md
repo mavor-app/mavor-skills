@@ -50,12 +50,12 @@ Scans every variant in the catalog and surfaces those whose `inventoryItem.unitC
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain (e.g., mystore.myshopify.com) |
 | status_filter | string | no | ACTIVE | Variant product status to audit: `ACTIVE`, `DRAFT`, `ARCHIVED`, or `ALL` |
 | vendor_filter | string | no | — | Optional vendor to scope the audit |
 | include_zero_cost | bool | no | true | Treat `unitCost = 0` as missing (recommended; zero cost is rarely intentional) |

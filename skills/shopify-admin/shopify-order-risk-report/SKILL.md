@@ -43,12 +43,12 @@ Queries recent orders and surfaces those with high or medium fraud risk scores, 
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain (e.g., mystore.myshopify.com) |
 | risk_level | string | no | high | Minimum risk level to include: `high`, `medium`, or `all` |
 | days_back | integer | no | 7 | Lookback window for orders to review |
 | min_order_value | float | no | 0 | Only include orders above this value (USD) |

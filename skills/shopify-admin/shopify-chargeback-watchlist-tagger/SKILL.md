@@ -49,12 +49,12 @@ Scans historical orders for any associated chargeback or dispute, then tags the 
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain (e.g., mystore.myshopify.com) |
 | days_back | integer | no | 730 | Historical window to scan for disputes (2 years default) |
 | watchlist_tag | string | no | chargeback-history | Tag applied to flagged customers |
 | include_won_disputes | bool | no | false | If false, only tag customers whose disputes were lost or are open |

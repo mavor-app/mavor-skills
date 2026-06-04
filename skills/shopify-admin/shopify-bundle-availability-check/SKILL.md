@@ -50,12 +50,12 @@ Walks every product flagged as a bundle (either via Shopify's native `requiresCo
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain (e.g., mystore.myshopify.com) |
 | metafield_namespace | string | no | bundle | Metafield namespace where bundle component definitions live |
 | metafield_key | string | no | components | Metafield key that holds the JSON list of `{variantId, quantity}` |
 | safety_stock | integer | no | 0 | Treat component as out-of-stock if on-hand minus this buffer is below required |

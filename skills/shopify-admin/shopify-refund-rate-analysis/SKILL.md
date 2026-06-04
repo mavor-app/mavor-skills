@@ -43,12 +43,12 @@ Analyzes orders with refunds to calculate refund rates by product, time period, 
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain (e.g., mystore.myshopify.com) |
 | days_back | integer | no | 30 | Lookback window |
 | group_by | string | no | product | Breakdown: `product`, `vendor`, or `period` |
 | min_orders | integer | no | 5 | Minimum orders per group to include in rate calculation |

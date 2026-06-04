@@ -45,12 +45,12 @@ For stores selling subscription products via Shopify's native subscriptions, thi
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain (e.g., mystore.myshopify.com) |
 | churn_window_days | integer | no | 30 | Rolling window for churn calculation (cancellations / starting subscribers) |
 | as_of | string | no | today (UTC) | ISO date for "as of" snapshot label |
 | include_paused | bool | no | false | Treat `PAUSED` contracts as active recurring revenue |

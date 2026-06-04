@@ -55,12 +55,12 @@ Forecasts future demand for each SKU based on historical sales velocity, trend a
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain |
 | days_back | integer | no | 90 | Historical sales window for velocity calculation |
 | forecast_days | integer | no | 30 | Days into the future to forecast demand |
 | lead_time_days | integer | no | 14 | Default vendor lead time in days |

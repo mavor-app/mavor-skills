@@ -39,12 +39,12 @@ Queries all active and partially-redeemed gift cards and reports the total outst
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain (e.g., mystore.myshopify.com) |
 | status | string | no | enabled | Filter by status: `enabled`, `disabled`, or `all` |
 | expiring_within_days | integer | no | 30 | Flag gift cards expiring within this many days |
 | format | string | no | human | Output format: `human` or `json` |

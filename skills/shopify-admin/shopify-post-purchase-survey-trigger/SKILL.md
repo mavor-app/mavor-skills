@@ -51,12 +51,12 @@ Builds the recipient list for a post-purchase survey campaign by selecting order
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain (e.g., mystore.myshopify.com) |
 | survey_min_days | integer | no | 7 | Earliest days after fulfillment to survey (give time for delivery + initial use) |
 | survey_max_days | integer | no | 14 | Latest days after fulfillment to survey (recall fades after ~2 weeks) |
 | marketing_consent_only | bool | no | true | Restrict to customers with `marketingState: SUBSCRIBED` |

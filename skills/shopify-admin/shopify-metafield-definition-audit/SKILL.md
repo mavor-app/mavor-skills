@@ -49,12 +49,12 @@ Inventories every metafield definition (PRODUCT, VARIANT, CUSTOMER, ORDER, COLLE
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain (e.g., mystore.myshopify.com) |
 | owner_types | string | no | all | Comma-separated owner types to scan (e.g. `PRODUCT,CUSTOMER`); `all` scans every supported type |
 | flag_unused | bool | no | true | Flag definitions whose `metafieldsCount` is zero |
 | flag_undocumented | bool | no | true | Flag definitions with empty/null `description` |

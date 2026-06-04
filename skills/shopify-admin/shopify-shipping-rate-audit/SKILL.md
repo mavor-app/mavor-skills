@@ -43,12 +43,12 @@ Audits the shipping configuration for every delivery profile on the store. Surfa
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain (e.g., mystore.myshopify.com) |
 | profile_filter | string | no | — | Optional delivery profile name to scope the audit |
 | flag_manual_only | bool | no | true | Flag zones that have only manual rates (no carrier-calculated rates) |
 | flag_high_price | float | no | — | Optional: flag any rate above this price (likely typo or stale) |

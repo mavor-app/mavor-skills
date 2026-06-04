@@ -47,12 +47,12 @@ Calculates the store's total outstanding gift card liability — the sum of unre
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain (e.g., mystore.myshopify.com) |
 | status | string | no | enabled | Filter by status: `enabled`, `disabled`, or `all` |
 | balance_bands | array | no | `[10, 50, 100, 250, 500]` | Upper edges of balance bands (in store currency) for distribution table |
 | stale_days | integer | no | 365 | Cards untouched longer than this are flagged as breakage candidates |

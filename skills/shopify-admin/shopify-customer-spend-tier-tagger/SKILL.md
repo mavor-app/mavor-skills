@@ -49,12 +49,12 @@ Queries all customers, calculates their lifetime spend using order history, and 
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain (e.g., mystore.myshopify.com) |
 | tiers | object | no | see below | Spend thresholds per tier (in store currency) |
 | tag_prefix | string | no | tier | Tag prefix (e.g., `tier:bronze`, `tier:silver`) |
 | remove_old_tiers | bool | no | true | Remove existing tier tags before applying new ones |

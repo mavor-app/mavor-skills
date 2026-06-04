@@ -48,12 +48,12 @@ Walks every product in the catalog, normalizes the `vendor` field, and clusters 
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain (e.g., mystore.myshopify.com) |
 | similarity_threshold | float | no | 0.88 | Levenshtein-ratio threshold for clustering (0.0–1.0) |
 | min_cluster_size | integer | no | 2 | Only emit clusters with at least this many distinct vendor strings |
 | ignore_suffixes | string | no | "Inc,LLC,Ltd,Co,Corp" | Comma-separated company suffixes stripped before comparison |

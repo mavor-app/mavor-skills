@@ -49,12 +49,12 @@ Estimates customer acquisition cost (CAC) for each traffic source by combining t
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain (e.g., mystore.myshopify.com) |
 | days_back | integer | no | 30 | Lookback window for orders to attribute |
 | ad_spend | object | no | {} | Map of source name → spend in store currency, e.g. `{"google": 4500, "meta": 3200, "tiktok": 1800}` |
 | new_customers_only | bool | no | true | Count only first-order customers as "acquired" |

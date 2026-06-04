@@ -47,12 +47,12 @@ Looks up existing fulfillments on orders and updates their tracking numbers and 
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain (e.g., mystore.myshopify.com) |
 | updates | array | yes | — | List of `{order_id, fulfillment_id, tracking_number, tracking_url, carrier}` objects |
 | notify_customer | bool | no | false | Resend shipping confirmation with updated tracking |
 | dry_run | bool | no | true | Preview updates without executing mutations |

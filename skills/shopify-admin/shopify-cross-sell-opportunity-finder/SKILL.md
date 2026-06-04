@@ -43,12 +43,12 @@ Finds products that are almost always purchased alone (single-item orders) and i
 - A Shopify store connection is selected in Mavor (connectionId is injected by the runtime).
 - Do not ask for API keys, tokens, or the `store` domain parameter.
 - Use `shopify_graphql_query` with the GraphQL documents below unless a dedicated Shopify tool applies.
+- Call `shopify_graphql_query` with `query` and optional `variables` only; do not use `skill_run` for this playbook.
 
 ## Parameters
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| store | string | yes | — | Store domain |
 | days_back | integer | no | 180 | Order lookback window |
 | solo_threshold | float | no | 70 | % of orders where product is bought alone to flag as "solo" |
 | min_orders | integer | no | 10 | Minimum orders for a product to be analyzed |
